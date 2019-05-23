@@ -32,6 +32,10 @@ public class College {
 
         studentGroupChemistry.printStudentsInGroup();
 
+        studentGroupEnglish.emptyGroup();
+        studentGroupEnglish.printStudentsInGroup();
+        System.out.println("After emptying the group the free places are "+ studentGroupEnglish.freePlaces);
+
 
     }
 }
