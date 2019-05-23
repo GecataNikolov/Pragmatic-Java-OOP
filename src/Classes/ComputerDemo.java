@@ -2,9 +2,11 @@ package Classes;
 
 public class ComputerDemo {
     public static void main(String[] args) {
-        Computer laptop= new Computer();
-        Computer pc= new Computer();
+        Computer laptop = new Computer(2019, 1000, 1000, 500);
+        Computer pc = new Computer(2002, 800, 1000, 500);
 
+        // Old code before constructors
+        /*
         laptop.freeMemory = 200;
         laptop.operationSystem = "Windows";
         laptop.hardDiskMemory = 500;
@@ -19,7 +21,7 @@ public class ComputerDemo {
         pc.freeMemory = 500;
         pc.isNotebook = false;
         pc.price = 800;
-
+        */
         pc.useMemory(100);
         laptop.changeOperationSystem("Ubuntu");
 
@@ -40,7 +42,7 @@ public class ComputerDemo {
         System.out.println(laptop.price);
         System.out.println(laptop.year);
 
-
+        System.out.println(pc.comparePrice(laptop));
 
     }
 }
