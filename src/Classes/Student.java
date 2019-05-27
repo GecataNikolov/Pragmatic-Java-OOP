@@ -15,7 +15,6 @@ public class Student {
         isDegree = false;
         money = 0;
     }
-    // Need to add constructor...
 
     public Student(String name, String subject, int age) {
         this();

@@ -19,6 +19,7 @@ public class StudentGroup {
 
     void addStudent(Student student) {
         int index = this.students.length - freePlaces;
+
         if (this.groupProject.equalsIgnoreCase(student.subject) && this.freePlaces <= 5) {
             this.students[index] = student;
             this.freePlaces--;
@@ -35,7 +36,6 @@ public class StudentGroup {
     String bestStudent() {
         double maxGrade = 0;
         String studentName = "";
-//                this.students[0].name;
 
         for (int i = 0; i < this.students.length; i++) {
             if (this.students[i] == null) {
@@ -61,7 +61,7 @@ public class StudentGroup {
         System.out.println("All students in " + this.groupProject + " are");
         for (int i = 0; i < this.students.length; i++) {
             if (this.students[i] == null) {
-                if (i == 0){
+                if (i == 0) {
                     System.out.println("No students in this group " + this.groupProject);
                 }
                 break;
@@ -70,7 +70,6 @@ public class StudentGroup {
             students[i].printStudentInfo();
             System.out.println("----------------------------");
         }
-
 
     }
 
