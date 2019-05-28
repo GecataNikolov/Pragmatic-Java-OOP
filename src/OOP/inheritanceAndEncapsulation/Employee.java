@@ -15,7 +15,7 @@ public class Employee extends Person{
            return  (this.daySalary * 1.5) * hours;
         }
         else{
-            return this.daySalary;
+            return 0;
         }
     }
      void showEmployeeInfo(){
