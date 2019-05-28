@@ -6,7 +6,7 @@ public class Student extends Person {
     private double score;
 
 
-    public Student(String name, int age, boolean isMan, double score) {
+    Student(String name, int age, boolean isMan, double score) {
         super(name, age, isMan);
         setScore(score);
     }
@@ -35,19 +35,17 @@ public class Student extends Person {
                 '}';
     }
 
-    public void showStudentInfo(){
+    void showStudentInfo() {
         System.out.println(this.toString());
     }
 
-    public void setScore(double score) {
-        if (score >=2 && score <= 6) {
+    private void setScore(double score) {
+        if (score >= 2 && score <= 6) {
             this.score = score;
-        }
-        else{
+        } else {
             System.out.println("Invalid score");
         }
     }
-
 
 
 }

@@ -5,12 +5,12 @@ import java.util.Objects;
 public class Employee extends Person{
     private double daySalary;
 
-    public Employee(String name, int age, boolean isMan, double daySalary) {
+     Employee(String name, int age, boolean isMan, double daySalary) {
         super(name, age, isMan);
         setDaySalary(daySalary);
     }
 
-    public double calculateOvertime(double hours){
+     double calculateOvertime(double hours){
         if(this.age >= 18){
            return  (this.daySalary * 1.5) * hours;
         }
@@ -18,15 +18,15 @@ public class Employee extends Person{
             return this.daySalary;
         }
     }
-    public void showEmployeeInfo(){
+     void showEmployeeInfo(){
         System.out.println(this.toString());
     }
 
-    public void setDaySalary(double daySalary) {
+     void setDaySalary(double daySalary) {
         this.daySalary = daySalary;
     }
 
-    public double getDaySalary() {
+     double getDaySalary() {
         return daySalary;
     }
 

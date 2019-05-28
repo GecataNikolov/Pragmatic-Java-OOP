@@ -3,18 +3,17 @@ package OOP.inheritanceAndEncapsulation;
 import java.util.Objects;
 
 public class Person {
-    // default/package access modifier- to be used in Employee.java and Student.java
     String name;
     int age;
     boolean isMan;
 
-    public Person(String name, int age, boolean isMan) {
+    Person(String name, int age, boolean isMan) {
         this.name = name;
         this.age = age;
         this.isMan = isMan;
     }
 
-    public void showPersonInfo(){
+    void showPersonInfo() {
         System.out.println(this.toString());
     }
 
