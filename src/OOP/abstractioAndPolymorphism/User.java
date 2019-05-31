@@ -1,10 +1,10 @@
 package OOP.abstractioAndPolymorphism;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public interface User {
     void login(String username);
     void logout();
     String getUsername();
-    Date getRegisteredDate();
+    LocalDate getRegisteredDate();
 }

@@ -1,14 +1,20 @@
 package OOP.abstractioAndPolymorphism;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public abstract class AbstractUser implements User {
 
     private String username;
     private boolean isAdmin;
     private boolean isLoggedIn;
-    private Date registeredDate;
+    private LocalDate registeredDate;
 
+
+    public AbstractUser(String username, boolean isAdmin, LocalDate registeredDate) {
+        this.username = username;
+        this.isAdmin = isAdmin;
+        this.registeredDate = registeredDate;
+    }
 
     @Override
     public void login(String username) {
@@ -26,13 +32,13 @@ public abstract class AbstractUser implements User {
     }
 
     @Override
-    public Date getRegisteredDate() {
+    public LocalDate getRegisteredDate() {
         return this.registeredDate;
     }
 
     @Override
     public String toString() {
-        return "AbstractUser{" +
+        return "Information for " + username + "{" +
                 "username='" + username + '\'' +
                 ", isAdmin=" + isAdmin +
                 ", isLoggedIn=" + isLoggedIn +
