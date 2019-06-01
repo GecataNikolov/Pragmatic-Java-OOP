@@ -18,6 +18,7 @@ public class Demo {
         adm.registerNewUser("test", false);
         adm.registerNewUser("test", false);
 
+
         adm.printUserInformation();
         adm.deleteUser("test");
         adm.printUserInformation();

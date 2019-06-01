@@ -19,8 +19,8 @@ public class AdminUserImpl extends AbstractUser implements AdminUser {
     @Override
     public void deleteUser(String username) {
         for (int i = 0; i < dbLength; i++) {
-            if (db.getUsers()[i]== null){
-                if (i == dbLength-1){
+            if (db.getUsers()[i] == null) {
+                if (i == dbLength - 1) {
                     System.out.println("There is no such a user registered in DB");
                     break;
                 }
@@ -33,6 +33,7 @@ public class AdminUserImpl extends AbstractUser implements AdminUser {
         }
     }
 
+
     @Override
     public User registerNewUser(String username, boolean isAdmin) {
         User createdUser = null;
@@ -43,8 +44,8 @@ public class AdminUserImpl extends AbstractUser implements AdminUser {
                 } else {
                     createdUser = new UserImpl(username, isAdmin, date);
                 }
-                db.getUsers()[i] = createdUser;
-            } else if (i == dbLength-1) {
+                return db.getUsers()[i] = createdUser;
+            } else if (i == dbLength - 1) {
                 System.out.println("Max allowed registered users for admin: " + this.getUsername());
                 break;
             }
@@ -55,7 +56,8 @@ public class AdminUserImpl extends AbstractUser implements AdminUser {
                 }
                 if (username.equals(db.getUsers()[j].getUsername()) && db.getUsers()[j] != db.getUsers()[i]) {
                     createdUser = null;
-                    return db.getUsers()[i] = createdUser;
+                    System.out.println("Username already exists in the DB");
+                    return createdUser;
                 }
             }
             //return createdUser;
@@ -63,14 +65,15 @@ public class AdminUserImpl extends AbstractUser implements AdminUser {
         return null;
     }
 
-    public User registerNewUser2(String username, boolean isAdmin) {
+    /*
+    public User registerNewUser(String username, boolean isAdmin) {
         int index = -1;
 
         for (int i = 0; i < dbLength; i++) {
-            User current = db.getUsers()[i];
-            if (current != null) {
+            if (db.getUsers()[i] != null) {
+                User current = db.getUsers()[i];
                 if (current.getUsername() == username) {
-                    //TODO Write that the user exists in the Console
+                    System.out.println("Username already registered in DB");
                     return current;
                 }
             } else {
@@ -81,20 +84,24 @@ public class AdminUserImpl extends AbstractUser implements AdminUser {
         }
 
         if (index == -1) {
-            //TODO output that the array is full
-
+            System.out.println("Max allowed users already registered");
             return null;
         } else {
-            return isAdmin ? new AdminUserImpl(username, isAdmin, date) : new UserImpl(username, isAdmin, date);
+            if (isAdmin){
+                return  new AdminUserImpl(username,true,date);
+            }
+            else{
+                return  new UserImpl(username, false, date);
+            }
         }
     }
-
+*/
 
     @Override
     public void printUserInformation() {
         for (int i = 0; i < dbLength; i++) {
             {
-                if (db.getUsers()[i] != null){
+                if (db.getUsers()[i] != null) {
                     System.out.println(db.getUsers()[i].toString());
                 }
             }
