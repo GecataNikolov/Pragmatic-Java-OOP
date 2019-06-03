@@ -12,7 +12,7 @@ public class Employee extends Person{
 
      double calculateOvertime(double hours){
         if(this.age >= 18){
-           return  (this.daySalary * 1.5) * hours;
+           return  (this.daySalary/8 * 1.5) * hours;
         }
         else{
             return 0;
