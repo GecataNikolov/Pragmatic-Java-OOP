@@ -23,7 +23,7 @@ public class HW6_SizeAndEqualsLists {
 
         if (firstIntList.size() == secondIntList.size()){
             System.out.println("The list has same length");
-            if (firstIntList.equals(secondIntList)){
+            if (firstIntList.containsAll(secondIntList)){
                 System.out.println("The list are same");
             }
             else{

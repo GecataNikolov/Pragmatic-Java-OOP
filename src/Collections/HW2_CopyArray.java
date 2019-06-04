@@ -28,7 +28,7 @@ public class HW2_CopyArray {
 
         listInt.addAll(listInt);
         System.out.println(listInt.toString());
-        ;
+
     }
 
 }
