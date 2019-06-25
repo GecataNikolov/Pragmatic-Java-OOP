@@ -10,37 +10,37 @@ import Exercise.bg.pragmatic.impl.SimpleNotepad;
 public class Demo {
     public static void main(String[] args) {
 
-        IElectronicDevice elSecuredNotepad = new ElectronicSecuredNotepad("pass", true);
-        ((ElectronicSecuredNotepad) elSecuredNotepad).createPage("Title1", "Text1");
+        ElectronicSecuredNotepad elSecuredNotepad = new ElectronicSecuredNotepad("pass", true);
+        elSecuredNotepad.createPage("Title1", "Text1");
         elSecuredNotepad.start();
-        ((ElectronicSecuredNotepad) elSecuredNotepad).createPage("Title2", "Text2");
-        ((ElectronicSecuredNotepad) elSecuredNotepad).createPage("Title3" , "Text3");
+        elSecuredNotepad.createPage("Title2", "Text2");
+        elSecuredNotepad.createPage("Title3" , "Text3");
         elSecuredNotepad.stop();
-        ((ElectronicSecuredNotepad) elSecuredNotepad).createPage("Title4" , "Text4");
+        elSecuredNotepad.createPage("Title4" , "Text4");
 
         elSecuredNotepad.start();
-        ((ElectronicSecuredNotepad) elSecuredNotepad).previewAllPages();
+        elSecuredNotepad.previewAllPages();
 
         System.out.println("--------------------");
 
         try {
-            ((ElectronicSecuredNotepad) elSecuredNotepad).deleteText(2);
+            elSecuredNotepad.deleteText(2);
         } catch (NoSuchPageException e) {
             e.getMessage();
             System.out.println("Try with some valid page number");
         }
 
-        ((ElectronicSecuredNotepad) elSecuredNotepad).previewAllPages();
+        elSecuredNotepad.previewAllPages();
         System.out.println("---------------------------");
 
         try {
-            ((ElectronicSecuredNotepad) elSecuredNotepad).replaceText(3,"changedText3");
+            elSecuredNotepad.replaceText(3,"changedText3");
         } catch (NoSuchPageException e) {
             e.getMessage();
             System.out.println("Try with some valid page number");
         }
 
-        ((ElectronicSecuredNotepad) elSecuredNotepad).previewAllPages();
+        elSecuredNotepad.previewAllPages();
 
 
         Notepad securedNotepad = new SecuredNotepad("parola");
